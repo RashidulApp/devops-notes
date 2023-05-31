@@ -149,7 +149,7 @@ Overall, Kubernetes is a powerful tool that can help organizations improve the s
 
 
 <details>
-<summary>why you might not want to use Kubernetes?</summary><br><b>
+<summary>why you might not want to use Kubernetes?</summary><br>
 
 Kubernetes is a powerful tool for managing containerized applications, but it's not always the right choice. Here are a few reasons why you might not want to use Kubernetes:
 
@@ -157,10 +157,10 @@ Kubernetes is a powerful tool for managing containerized applications, but it's 
 - Your application is not complex enough. Kubernetes is a complex tool, and it can be overkill for simple applications. If your application is simple, you may be able to get away with using a simpler orchestration tool, such as Docker Swarm.
 - You don't have the resources to manage Kubernetes. Kubernetes can be a lot of work to manage. If you don't have the resources to dedicate to managing Kubernetes, you may want to consider using a managed Kubernetes service.
 
-</b></details>
+</details>
 
 <details>
-<summary>Why you might want to use Kubernetes?</summary><br><b>
+<summary>Why you might want to use Kubernetes?</summary><br>
 
 Kubernetes is a powerful tool for managing containerized applications, but it's not always the right choice. Here are a few reasons why you might not want to use Kubernetes:
 
@@ -168,10 +168,10 @@ Kubernetes is a powerful tool for managing containerized applications, but it's 
 - Your application is not complex enough. Kubernetes is a complex tool, and it can be overkill for simple applications. If your application is simple, you may be able to get away with using a simpler orchestration tool, such as Docker Swarm.
 - You don't have the resources to manage Kubernetes. Kubernetes can be a lot of work to manage. If you don't have the resources to dedicate to managing Kubernetes, you may want to consider using a managed Kubernetes service.
 
-</b></details>
+</details>
 
 <details>
-<summary>What are some of Kubernetes features?</summary><br><b>
+<summary>What are some of Kubernetes features?</summary><br>
 
 - auto-scaling: Kubernetes can automatically scale containerized applications and their resources up or down based on usage.
 - Lifecycle management: Kubernetes can automate deployments and updates with the ability to roll out changes to your application or its configuration in a progressive manner, while monitoring application health to ensure it doesn't kill all your instances at the same time. It can also rollback the change if something goes wrong.
@@ -184,10 +184,10 @@ Kubernetes is a powerful tool for managing containerized applications, but it's 
 - Security: Kubernetes provides a number of features that can be used to improve the security of your containerized applications. These features include role-based access control (RBAC), network policies, and secrets management.
 
 
-</b></details>
+</details>
 
 <details>
-<summary>What Kubernetes objects are there?</summary><br><b>
+<summary>What Kubernetes objects are there?</summary><br>
 
 Kubernetes objects are the basic building blocks of a Kubernetes cluster. They are used to represent the state of your cluster and to define the desired state of your applications.
 
@@ -204,10 +204,10 @@ There are many different types of Kubernetes objects, but some of the most commo
 - ConfigMaps: ConfigMaps are used to store configuration data that can be shared between pods.
 - Secrets: Secrets are used to store sensitive data, such as passwords and keys.
   ...
-</b></details>
+</details>
 
 <details>
-<summary>What fields are mandatory with any Kubernetes object?</summary><br><b>
+<summary>What fields are mandatory with any Kubernetes object?</summary><br>
 
 In Kubernetes, the fields that are mandatory for any object can vary depending on the specific object type. However, there are some common fields that are typically required for most Kubernetes objects. Here are a few essential fields that are commonly mandatory:
 
@@ -223,7 +223,7 @@ In Kubernetes, the fields that are mandatory for any object can vary depending o
 </b></details>
 
 <details>
-<summary>What is kubectl?</summary><br><b>
+<summary>What is kubectl?</summary><br>
 
 Kubectl is a command-line tool that allows you to interact with a Kubernetes cluster. It can be used to deploy applications, manage resources, and view logs. Kubectl is available for a variety of operating systems, including Linux, macOS, and Windows.
 
@@ -260,10 +260,10 @@ Here are some of the most common kubectl commands:
 
 Kubectl is a powerful tool that can be used to manage Kubernetes clusters. With kubectl, you can easily deploy applications, manage resources, and view logs.
 
-</b></details>
+</details>
 
 <details>
-<summary>What Kubernetes objects do you usually use when deploying applications in Kubernetes?</summary><br><b>
+<summary>What Kubernetes objects do you usually use when deploying applications in Kubernetes?</summary><br>
 
 The Kubernetes objects I usually use when deploying applications in Kubernetes are:
 
@@ -279,18 +279,18 @@ The Kubernetes objects I usually use when deploying applications in Kubernetes a
 
 These are just a few of the many Kubernetes objects that can be used to deploy applications in Kubernetes. The specific objects that you use will depend on the specific needs of your application.
 
-</b></details>
+</details>
 
 <details>
-<summary>Why there is no such command in Kubernetes? <code>kubectl get containers</code></summary><br><b>
+<summary>Why there is no such command in Kubernetes? <code>kubectl get containers</code></summary><br>
 
 There is no such command as `kubectl get containers` because containers are not first-class objects in Kubernetes. Containers are always contained within pods, and so the command to list containers is `kubectl get pods`. This command will list all pods in the cluster, along with the containers that are running in each pod.
 
 
-</b></details>
+</details>
 
 <details>
-<summary>What actions or operations you consider as best practices when it comes to Kubernetes?</summary><br><b>
+<summary>What actions or operations you consider as best practices when it comes to Kubernetes?</summary><br>
 
 Here are some of the best practices I consider when it comes to Kubernetes:
 
@@ -307,28 +307,28 @@ Here are some of the best practices I consider when it comes to Kubernetes:
 
 These are just a few of the best practices I consider when it comes to Kubernetes. By following these practices, you can help to ensure that your Kubernetes applications are reliable, scalable, and secure.
 
-</b></details>
+</details>
 
 ### Cluster and Architecture
 
 <details>
-<summary>What is a Kubernetes Cluster?</summary><br><b>
+<summary>What is a Kubernetes Cluster?</summary><br>
 
 Red Hat Definition: "A Kubernetes cluster is a set of node machines for running containerized applications. If you’re running Kubernetes, you’re running a cluster.
 At a minimum, a cluster contains a worker node and a master node."
 
 Read more [here](https://www.redhat.com/en/topics/containers/what-is-a-kubernetes-cluster)
-</b></details>
+</details>
 
 <details>
-<summary>What is a Node?</summary><br><b>
+<summary>What is a Node?</summary><br>
 
 A node is a virtual or a physical machine that serves as a worker for running the applications.<br>
 It's recommended to have at least 3 nodes in a production environment.
 </b></details>
 
 <details>
-<summary>What the master node is responsible for?</summary><br><b>
+<summary>What the master node is responsible for?</summary><br>
 
 The master coordinates all the workflows in the cluster:
 
@@ -336,7 +336,7 @@ The master coordinates all the workflows in the cluster:
 * Managing desired state
 * Rolling out new updates
 
-</b></details>
+</details>
 
 <details>
 <summary>Describe shortly and in high-level, what happens when you run <code>kubectl get nodes</code></summary><br><b>
@@ -430,19 +430,19 @@ Outputs the status of each of the control plane components.
 `kubectl get nodes`
 
 Note: You might want to create an alias (`alias k=kubectl`) and get used to `k get no`
-</b></details>
+</details>
 
 <details>
-<summary>Create a list of all nodes in JSON format and store it in a file called "some_nodes.json"</summary><br><b>
+<summary>Create a list of all nodes in JSON format and store it in a file called "some_nodes.json"</summary><br>
 
 `k get nodes -o json > some_nodes.json`
 </b></details>
 
 <details>
-<summary>Check what labels one of your nodes in the cluster has</summary><br><b>
+<summary>Check what labels one of your nodes in the cluster has</summary><br>
 
 `k get no minikube --show-labels`
-</b></details>
+</details>
 
 ### Pods
 
@@ -616,7 +616,7 @@ More details can be obtained with `kubectl describe po <POD_NAME>`.
 </b></details>
 
 <details>
-<summary>Explain liveness probes</summary><br><b>
+<summary>Explain liveness probes</summary><br>
 
 Liveness probes is a useful mechanism used for restarting the container when a certain check/probe, the user has defined, fails.<br>
 For example, the user can define that the command `cat /app/status` will run every X seconds and the moment this command fails, the container will be restarted.
@@ -2536,15 +2536,15 @@ To fix it, these lines should placed in the spec of the cron job, above or under
 </b></details>
 
 <details>
-<summary>You have one Kubernetes cluster and multiple teams that would like to use it. You would like to limit the resources each team consumes in the cluster. Which Kubernetes concept would you use for that?</summary><br><b>
+<summary>You have one Kubernetes cluster and multiple teams that would like to use it. You would like to limit the resources each team consumes in the cluster. Which Kubernetes concept would you use for that?</summary><br>
 
 Namespaces will allow to limit resources and also make sure there are no collisions between teams when working in the cluster (like creating an app with the same name).
-</b></details>
+</details>
 
 <details>
-<summary>What Kube Proxy does?</summary><br><b>
+<summary>What Kube Proxy does?</summary><br>
   Kube Proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept
-</b></details>
+</details>
 
 <details>
 <summary>What "Resources Quotas" are used for and how?</summary><br><b>
