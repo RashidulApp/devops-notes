@@ -399,9 +399,9 @@ The master node is a critical component of the Kubernetes cluster. It is respons
 
 
 <details>
-<summary> What are the Kubernetes components of a worker node <summary> <br>
+<summary> What are the Kubernetes components of a worker node </summary> <br>
 
-  he following are the Kubernetes components of a worker node:
+he following are the Kubernetes components of a worker node:
 * **Kubelet:** The kubelet is a process that runs on each worker node. It is responsible for managing the containers that are running on the node.
 * **Kube-proxy:** The kube-proxy is a network proxy that runs on each worker node. It is responsible for routing traffic to the containers that are running on the node.
 * **Container runtime:** The container runtime is a software that is responsible for running containers. Kubernetes supports a number of different container runtimes, such as Docker and containerd.
