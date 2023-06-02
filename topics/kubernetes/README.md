@@ -647,7 +647,6 @@ If the status of a Pod is "ContainerCreating" in Kubernetes, it means that the P
 
 True.
  </details>
-
 <details>
 <summary>What happens when you run a Pod with kubectl?</summary><br>
 
