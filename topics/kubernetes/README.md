@@ -313,64 +313,109 @@ These are just a few of the best practices I consider when it comes to Kubernete
 
 <details>
 <summary>What is a Kubernetes Cluster?</summary><br>
-
-Red Hat Definition: "A Kubernetes cluster is a set of node machines for running containerized applications. If you’re running Kubernetes, you’re running a cluster.
-At a minimum, a cluster contains a worker node and a master node."
-
-Read more [here](https://www.redhat.com/en/topics/containers/what-is-a-kubernetes-cluster)
+A Kubernetes cluster is a group of connected computers that work together to run containerized applications using the Kubernetes platform. It automates application deployment, scaling, and management, simplifying the management of containerized workloads.
 </details>
 
 <details>
 <summary>What is a Node?</summary><br>
 
-A node is a virtual or a physical machine that serves as a worker for running the applications.<br>
-It's recommended to have at least 3 nodes in a production environment.
+In Kubernetes, a node is a worker machine that runs containerized workloads. It can be a physical machine or a virtual machine, and can be hosted on-premises or in the cloud. Each node in the cluster is responsible for running containers and providing the necessary resources, such as CPU, memory, and storage, for the applications running on it.  A Kubernetes cluster can have a large number of nodes—recent versions support up to 5,000 nodes. It's recommended to have at least 3 nodes in a production environment. A node typically consists of the following components:
+☞ Kubelet
+☞ Container runtime
+☞ Kube proxy
 </b></details>
 
 <details>
-<summary>What the master node is responsible for?</summary><br>
+<summary>What the Kubernets master node is responsible for?</summary><br>
+Sure, here is the LinkedIn post:
 
-The master coordinates all the workflows in the cluster:
+**The Kubernetes Master Node**
 
-* Scheduling applications
-* Managing desired state
-* Rolling out new updates
+The Kubernetes master node is a critical component of a Kubernetes cluster. It is responsible for managing the entire cluster and ensuring that it is running smoothly. If the master node fails, the entire cluster will be unavailable. For this reason, it is important to have a high availability (HA) configuration for the master node. This can be done by running multiple master nodes in a cluster.
+
+Here are some of the responsibilities of the Kubernetes master node:
+
+* API server: The API server is the main entry point for interacting with the Kubernetes cluster. It provides a RESTful interface that can be used to create, delete, and manage resources in the cluster.
+* Controller manager: The controller manager is responsible for running a number of controllers that manage the state of the cluster. These controllers include the node controller, the pod controller, and the service controller.
+* Scheduler: The scheduler is responsible for scheduling pods to nodes in the cluster. It takes into account the resources available on each node and the requirements of each pod when making scheduling decisions.
+* etcd: etcd is a key-value store that is used to store the state of the Kubernetes cluster. This includes information about nodes, pods, services, and other resources.
+
+If you are running a Kubernetes cluster, it is important to understand the role of the master node and to take steps to ensure its availability. By doing so, you can help to ensure that your cluster is always up and running.
+
+**Here are some tips for ensuring the availability of the Kubernetes master node:**
+
+* Run multiple master nodes in a cluster.
+* Use a load balancer to distribute traffic between the master nodes.
+* Use a high availability storage solution for etcd.
+* Monitor the health of the master nodes and take corrective action if necessary.
+
+By following these tips, you can help to ensure that your Kubernetes master node is always available and that your cluster is always up and running.
 
 </details>
 
 <details>
-<summary>Describe shortly and in high-level, what happens when you run <code>kubectl get nodes</code></summary><br><b>
+<summary>Describe shortly and in high-level, what happens when you run <code>kubectl get nodes</code></summary><br>
 
-1. Your user is getting authenticated
-2. Request is validated by the kube-apiserver
-3. Data is retrieved from etcd
-</b></details>
+When you run `kubectl get nodes`, the Kubernetes command-line tool will list all the nodes in your cluster. A node is a physical or virtual machine that is running the Kubernetes control plane and can be used to run pods. The output of `kubectl get nodes` will include information about each node, such as its name, IP address, and status. You can use this information to troubleshoot problems with your cluster or to get an overview of the resources that are available.
 
-<details>
-<summary>True or False? Every cluster must have 0 or more master nodes and at least 1 worker</summary><br><b>
+Here is an example of the output of `kubectl get nodes`:
 
-False. A Kubernetes cluster consists of at least 1 master and can have 0 workers (although that wouldn't be very useful...)
+```
+NAME        STATUS      ROLES    AGE   VERSION
+k8s-node-1   Ready    master   2d18h   v1.22.1
+k8s-node-2   Ready    worker   2d18h   v1.22.1
+```
 
-</b></details> 
+In this example, there are two nodes in the cluster: `k8s-node-1` and `k8s-node-2`. `k8s-node-1` is a master node, which means that it is responsible for managing the cluster. `k8s-node-2` is a worker node, which means that it can be used to run pods. Both nodes are running Kubernetes version 1.22.1.
 
-<details>
-<summary>What are the components of the master node (aka control plane)?</summary><br><b>
-
-  * API Server - the Kubernetes API. All cluster components communicate through it
-  * Scheduler - assigns an application with a worker node it can run on
-  * Controller Manager - cluster maintenance (replications, node failures, etc.)
-  * etcd - stores cluster configuration
-
-</b></details>
+You can use the `kubectl get nodes` command to get more detailed information about each node, such as the resources that are available on the node and the pods that are running on the node. You can also use the `kubectl describe nodes` command to get even more detailed information about each node.
+</details>
 
 <details>
-<summary>What are the components of a worker node (aka data plane)?</summary><br><b>
+<summary>True or False? Every cluster must have 0 or more master nodes and at least 1 worker</summary><br>
 
-  * Kubelet - an agent responsible for node communication with the master.
-  * Kube-proxy - load balancing traffic between app components
-  * Container runtime - the engine runs the containers (Podman, Docker, ...)
+False. A Kubernetes cluster must have at least one master node and at least one worker node. The master node is responsible for managing the cluster, while the worker nodes are responsible for running applications. A cluster with no master node is not a Kubernetes cluster.
+</details> 
 
-</b></details>
+<details>
+<summary>What are the Kubernetes components of the master node ?</summary><br>
+The Kubernetes master node is responsible for managing the Kubernetes cluster. It consists of the following components:
+
+* **API server:** The API server is the main entry point for all communication with the Kubernetes cluster. It exposes a RESTful API that can be used to create, delete, and manage resources in the cluster.
+* **etcd:** etcd is a key-value store that stores all of the cluster's state data. This includes information about pods, services, and nodes.
+* **kube-scheduler:** The kube-scheduler is responsible for scheduling pods onto nodes in the cluster. It takes into account factors such as resource availability, pod affinity, and pod anti-affinity when making scheduling decisions.
+* **kube-controller-manager:** The kube-controller-manager is responsible for running a number of controllers that ensure that the cluster's state is consistent with the desired state. These controllers include the replication controller, the replica set controller, the service controller, and the endpoint controller.
+* **cloud-controller-manager:** The cloud-controller-manager is responsible for managing resources in the cloud. This includes creating and deleting instances, managing load balancers, and creating and deleting persistent volumes.
+
+In addition to these core components, the master node may also include a number of other components, such as:
+
+* **DNS server:** A DNS server is used to resolve hostnames to IP addresses. This is necessary for pods to communicate with each other.
+* **Web UI:** A web UI can be used to manage the Kubernetes cluster. This can be useful for tasks such as viewing the cluster's state, creating and deleting resources, and troubleshooting problems.
+* **Logging and monitoring:** Logging and monitoring tools can be used to collect data about the cluster's performance. This data can be used to identify problems and improve the cluster's performance.
+
+The master node is a critical component of the Kubernetes cluster. It is responsible for managing the cluster's state and ensuring that the cluster's resources are used efficiently.
+
+</details>
+
+<details>
+<summary>What are the Kubernetes components of a worker node <summary><br>
+
+The following are the Kubernetes components of a worker node:
+
+* **Kubelet:** The kubelet is a process that runs on each worker node. It is responsible for managing the containers that are running on the node.
+* **Kube-proxy:** The kube-proxy is a network proxy that runs on each worker node. It is responsible for routing traffic to the containers that are running on the node.
+* **Container runtime:** The container runtime is a software that is responsible for running containers. Kubernetes supports a number of different container runtimes, such as Docker and containerd.
+* **CNI plugin:** The CNI plugin is responsible for configuring the network on the worker node. Kubernetes supports a number of different CNI plugins, such as Flannel and Cilium.
+
+In addition to these core components, a worker node may also include a number of other components, such as:
+
+* **Logging and monitoring:** Logging and monitoring tools can be used to collect data about the node's performance. This data can be used to identify problems and improve the node's performance.
+* **Storage:** Storage is required to store the data that is used by the containers that are running on the node. Kubernetes supports a number of different storage options, such as local storage and cloud storage.
+* **Networking:** Networking is required to allow the containers that are running on the node to communicate with each other and with the outside world. Kubernetes supports a number of different networking options, such as host networking and overlay networking.
+
+The worker nodes are the workhorses of the Kubernetes cluster. They are responsible for running the applications that are deployed to the cluster. The components that are installed on the worker nodes determine how the applications are run and how they interact with each other.
+
+</details>
 
 <details>
 <summary>Place the components on the right side of the image in the right place in the drawing<br>
@@ -393,15 +438,27 @@ Apply requests and limits, especially on third party applications (where the unc
 </b></details>
 
 <details>
-<summary>Do you have experience with deploying a Kubernetes cluster? If so, can you describe the process in high-level?</summary><br><b>
+<summary>Do you have experience with deploying a Kubernetes cluster? If so, can you describe the process in high-level?</summary><br>
 
-1. Create multiple instances you will use as Kubernetes nodes/workers. Create also an instance to act as the Master. The instances can be provisioned in a cloud or they can be virtual machines on bare metal hosts.
-2. Provision a certificate authority that will be used to generate TLS certificates for the different components of a Kubernetes cluster (kubelet, etcd, ...)
-  1. Generate a certificate and private key for the different components
-3. Generate kubeconfigs so the different clients of Kubernetes can locate the API servers and authenticate.
-4. Generate encryption key that will be used for encrypting the cluster data
-5. Create an etcd cluster
-</b></details>
+Yes, I do have experience with deploying Kubernetes clusters. The process of deploying a Kubernetes cluster can be broken down into the following steps:
+
+1. **Choose a deployment method.** There are a number of different ways to deploy a Kubernetes cluster. The most common methods are:
+    * **On-premises:** This involves deploying a cluster on your own hardware.
+    * **In the cloud:** This involves deploying a cluster on a cloud provider's infrastructure.
+    * **Managed service:** This involves using a third-party service to manage a cluster for you.
+
+2. **Provision the infrastructure.** Once you have chosen a deployment method, you need to provision the infrastructure for your cluster. This may involve creating virtual machines, configuring networking, and installing software.
+
+3. **Install Kubernetes.** Once the infrastructure is provisioned, you need to install Kubernetes. This can be done using a number of different tools, such as kubeadm, kops, and minikube.
+
+4. **Configure Kubernetes.** Once Kubernetes is installed, you need to configure it. This may involve setting up authentication, authorization, and networking.
+
+5. **Deploy applications.** Once Kubernetes is configured, you can deploy applications to the cluster. This can be done using a number of different tools, such as kubectl, Helm, and Skaffold.
+
+6. **Manage the cluster.** Once applications are deployed, you need to manage the cluster. This may involve tasks such as monitoring, scaling, and troubleshooting.
+
+The process of deploying a Kubernetes cluster can be complex, but it can be made easier by using a managed service or a tool like kubeadm. Once a cluster is deployed, it can be used to deploy and manage applications in a scalable and reliable way.
+</details>
 
 <details>
 <summary>Which command will list all the object types in a cluster?</summary><br><b>
