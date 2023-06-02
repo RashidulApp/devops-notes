@@ -317,13 +317,13 @@ A Kubernetes cluster is a group of connected computers that work together to run
 </details>
 
 <details>
-<summary>What is a Node?</summary><br>
+<summary>What is a Node?</summary>
 
 In Kubernetes, a node is a worker machine that runs containerized workloads. It can be a physical machine or a virtual machine, and can be hosted on-premises or in the cloud. Each node in the cluster is responsible for running containers and providing the necessary resources, such as CPU, memory, and storage, for the applications running on it.  A Kubernetes cluster can have a large number of nodes—recent versions support up to 5,000 nodes. It's recommended to have at least 3 nodes in a production environment. A node typically consists of the following components:
 ☞ Kubelet
 ☞ Container runtime
 ☞ Kube proxy
-</b></details>
+</details>
 
 <details>
 <summary>What the Kubernets master node is responsible for?</summary><br>
@@ -397,11 +397,11 @@ The master node is a critical component of the Kubernetes cluster. It is respons
 
 </details>
 
+
 <details>
-<summary>What are the Kubernetes components of a worker node <summary><br>
+<summary> What are the Kubernetes components of a worker node <summary> <br>
 
-The following are the Kubernetes components of a worker node:
-
+  he following are the Kubernetes components of a worker node:
 * **Kubelet:** The kubelet is a process that runs on each worker node. It is responsible for managing the containers that are running on the node.
 * **Kube-proxy:** The kube-proxy is a network proxy that runs on each worker node. It is responsible for routing traffic to the containers that are running on the node.
 * **Container runtime:** The container runtime is a software that is responsible for running containers. Kubernetes supports a number of different container runtimes, such as Docker and containerd.
@@ -414,7 +414,6 @@ In addition to these core components, a worker node may also include a number of
 * **Networking:** Networking is required to allow the containers that are running on the node to communicate with each other and with the outside world. Kubernetes supports a number of different networking options, such as host networking and overlay networking.
 
 The worker nodes are the workhorses of the Kubernetes cluster. They are responsible for running the applications that are deployed to the cluster. The components that are installed on the worker nodes determine how the applications are run and how they interact with each other.
-
 </details>
 
 <details>
