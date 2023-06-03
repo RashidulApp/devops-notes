@@ -3381,3 +3381,306 @@ Using ResourceQuats
  </details>
 
 <!-- {% endraw %} -->
+
+
+<!--  Kubernetes Bootcamp  -->
+
+### --- Kubernetes Bootcamp ---
+
+<details> 
+<summary>Kubernetes CLI - Main kubectl commands <summary>
+
+* **kubectl get** - Get information about Kubernetes objects.
+* **kubectl create** - Create a new Kubernetes object.
+* **kubectl delete** - Delete a Kubernetes object.
+* **kubectl edit** - Edit a Kubernetes object in a text editor.
+* **kubectl apply** - Apply Kubernetes manifests to a cluster.
+* **kubectl describe** - Describe a Kubernetes object in detail.
+* **kubectl logs** - Show the logs for a pod or container.
+* **kubectl exec** - Execute a command in a pod or container.
+* **kubectl port-forward** - Forward a port from a pod to your local machine.
+* **kubectl rollout** - Manage rollouts of Kubernetes objects.
+* **kubectl scale** - Scale a Kubernetes object.
+* **kubectl taint** - Mark a node with a taint.
+* **kubectl untain** - Remove a taint from a node.
+
+These are just a few of the many kubectl commands available. For a complete list, please see the Kubernetes documentation.
+
+Here are some examples of how to use the main kubectl commands:
+
+```
+# Get information about all pods
+kubectl get pods
+
+# Create a new pod
+kubectl create -f pod.yaml
+
+# Delete a pod
+kubectl delete pod my-pod
+
+# Edit a pod in a text editor
+kubectl edit pod my-pod
+
+# Apply Kubernetes manifests to a cluster
+kubectl apply -f manifests.yaml
+
+# Describe a pod in detail
+kubectl describe pod my-pod
+
+# Show the logs for a pod
+kubectl logs my-pod
+
+# Execute a command in a pod
+kubectl exec my-pod --command ls
+
+# Forward a port from a pod to your local machine
+kubectl port-forward my-pod 8080:80
+
+# Manage rollouts of Kubernetes objects
+kubectl rollout status deployment my-deployment
+
+# Scale a Kubernetes object
+kubectl scale deployment my-deployment --replicas 3
+
+# Mark a node with a taint
+kubectl taint node my-node unschedulable
+
+# Remove a taint from a node
+kubectl untain node my-node unschedulable
+```
+
+</details>
+
+
+<details> 
+<summary>Created nginx Deployment <summary>
+I can help you with that. Here are the steps on how to create an Nginx Deployment on Kubernetes:
+
+1. Create a Deployment YAML file.
+2. Apply the Deployment YAML file to the Kubernetes cluster.
+3. Verify that the Deployment is running.
+
+Here is an example of a Deployment YAML file:
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+```
+
+To apply the Deployment YAML file to the Kubernetes cluster, use the following command:
+
+```
+kubectl apply -f nginx-deployment.yaml
+```
+
+To verify that the Deployment is running, use the following command:
+
+```
+kubectl get deployments
+```
+
+The output of this command should show that the Deployment is running and has 2 replicas.
+
+Once the Deployment is running, you can access the Nginx web server by using the following command:
+
+```
+kubectl get service nginx
+```
+
+The output of this command should show the service name and IP address. You can use this IP address to access the Nginx web server in your web browser.
+
+Here are some additional things to keep in mind when creating an Nginx Deployment:
+
+* The `replicas` field specifies the number of Pods that should be created for the Deployment.
+* The `selector` field specifies the label selector that will be used to match Pods to the Deployment.
+* The `template` field specifies the Pod template that will be used to create Pods for the Deployment.
+* The `containers` field specifies the container that will be run in each Pod.
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
+<details> 
+<summary> <summary>
+
+</details>
+
+
