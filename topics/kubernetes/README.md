@@ -2006,8 +2006,7 @@ When chosen as the data store etcd was (and still is of course):
 
 <details>
 <summary>What are namespaces?</summary><br>
-
-Namespaces allow you split your cluster into virtual clusters where you can group your applications in a way that makes sense and is completely separated from the other groups (so you can for example create an app with the same name in two different namespaces)
+A Kubernetes namespace is a way of logically grouping Kubernetes resources together. It's like a virtual cluster within a cluster. This can be useful for a variety of reasons, such as separating different projects or teams, controlling access to resources, and providing different levels of isolation.
  </details>
 
 <details>
